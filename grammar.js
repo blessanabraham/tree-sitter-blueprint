@@ -70,6 +70,7 @@ module.exports = grammar({
         // Gtk | WebKit2 | Adw.StatusPage | Foo.Bar.Baz
         _object_fragment: $ => /[A-Z][A-Za-z0-9_]+/,
         object: $ => seq(
+            optional('.'),
             $._object_fragment,
             repeat(seq('.', $._object_fragment)),
         ),
@@ -77,6 +78,7 @@ module.exports = grammar({
             '{',
             repeat(choice(
                 $.styles_list,
+                $.layout_definition,
                 $.property_definition,
                 $.signal_binding,
                 $.object_definition,
@@ -93,6 +95,12 @@ module.exports = grammar({
             $.object,
             optional($.object_id),
             $.block,
+        ),
+        layout_definition: $ => seq(
+            'layout',
+            '{',
+            repeat($.property_definition),
+            '}',
         ),
         menu_definition: $ => seq(
             'menu',
@@ -134,10 +142,10 @@ module.exports = grammar({
 
         boolean: $ => choice('true', 'false'),
 
-        property_name: $ => /[a-z][A-Za-z0-9\-]+/,
+        property_name: $ => /[a-z][A-Za-z0-9\-_]+/,
         signal_name: $ => choice(
             $.property_name,
-            /notify::[a-z][A-Za-z0-9\-]+/,
+            /notify::[a-z][A-Za-z0-9\-_]+/,
         ),
         constant: $ => choice(
             'start', 'end',

@@ -25,7 +25,8 @@
 (signal_binding (function (identifier)) @function)
 (signal_binding "swapped" @keyword)
 
-(styles_list "styles" @function.builtin)
+(styles_list "styles" @function.macro)
+(layout_definition "layout" @function.macro)
 
 (gettext_string "_" @function.builtin)
 

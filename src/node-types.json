@@ -35,6 +35,10 @@
       "required": false,
       "types": [
         {
+          "type": "layout_definition",
+          "named": true
+        },
+        {
           "type": "object_definition",
           "named": true
         },
@@ -156,6 +160,21 @@
         },
         {
           "type": "version_number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "layout_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "property_definition",
           "named": true
         }
       ]
@@ -562,6 +581,10 @@
   },
   {
     "type": "item",
+    "named": false
+  },
+  {
+    "type": "layout",
     "named": false
   },
   {
