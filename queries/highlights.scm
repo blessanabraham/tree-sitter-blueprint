@@ -1,42 +1,21 @@
 (object_id) @variable
 
-[
-  ";"
-  "."
-  ","
-] @punctuation.delimiter
-
-[
-  "("
-  ")"
-  "["
-  "]"
-  "{"
-  "}"
-] @punctuation.bracket
-
 (string) @string
-(escape_sequence) @escape
-
-(number) @number
+(escape_sequence) @string.escape
 
 (comment) @comment
 
-[
-  (constant)
-  (boolean)
-] @constant.builtin
+(constant) @constant.builtin
+
+(boolean) @constant.boolean
 
 (array) @array
 
-[
-  (using)
-  (template)
-] @keyword
+(using) @include
 
-[
-  (decorator)
-] @function
+(template) @keyword
+
+(decorator) @attribute
 
 (property_definition (property_name) @parameter)
 
@@ -52,4 +31,28 @@
 
 (menu_definition "menu" @keyword)
 (menu_section "section" @keyword)
-(menu_item "item" @function.builtin)
+(menu_item "item" @function.macro)
+
+(template_definition (template_name_qualifier) @type.qualifier)
+
+(import_statement (gobject_library) @namespace)
+
+(import_statement (version_number) @float)
+
+(float) @float
+(number) @number
+
+[
+  ";"
+  "."
+  ","
+] @punctuation.delimiter
+
+[
+  "("
+  ")"
+  "["
+  "]"
+  "{"
+  "}"
+] @punctuation.bracket

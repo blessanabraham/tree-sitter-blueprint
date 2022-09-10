@@ -4,16 +4,19 @@ module.exports = grammar({
         source_file: $ => repeat($._toplevel),
         _toplevel: $ => choice(
             $.import_statement,
-            $._template_definition,
+            $.template_definition,
             $.object_definition,
             $.menu_definition,
         ),
         using: $ => 'using',
         template: $ => 'template',
+        gobject_library: $ => $.object,
+        _number: $ => /\d+/,
+        version_number: $ => seq($._number, repeat(seq('.', $._number))),
         import_statement: $ => seq(
             $.using,
-            $.object,
-            $.number,
+            $.gobject_library,
+            $.version_number,
             ';',
         ),
 
@@ -63,9 +66,13 @@ module.exports = grammar({
         ),
 
         object_id: $ => /[a-z][A-Za-z0-9_\-]+/,
-        identifier: $ => /[a-z][A-Za-z0-9_\-]+/,
+        identifier: $ => $.object_id,
         // Gtk | WebKit2 | Adw.StatusPage | Foo.Bar.Baz
-        object: $ => /[A-Z][A-Za-z0-9_]+(\.[A-Z][A-Za-z0-9_]+)*/,
+        _object_fragment: $ => /[A-Z][A-Za-z0-9_]+/,
+        object: $ => seq(
+            $._object_fragment,
+            repeat(seq('.', $._object_fragment)),
+        ),
         block: $ => seq(
             '{',
             repeat(choice(
@@ -117,9 +124,10 @@ module.exports = grammar({
                 ')',
             )
         ),
-        _template_definition: $ => seq(
+        template_name_qualifier: $ => $.object,
+        template_definition: $ => seq(
             $.template,
-            $.object,
+            $.template_name_qualifier,
             ':', $.object,
             $.block,
         ),
@@ -148,7 +156,7 @@ module.exports = grammar({
             $.object_definition,
             $.identifier,
             $.string, $.gettext_string,
-            $.number,
+            $.number, $.float,
         ),
         _property_binding: $ => seq(
             'bind',
@@ -189,7 +197,8 @@ module.exports = grammar({
                 '/'
             )
         )),
-        number: $ => /\d+(\.\d+)*/,
+        float: $ => /\d+\.\d+/,
+        number: $ => $._number,
         array: $ => seq(
             '[',
             optional(seq(
