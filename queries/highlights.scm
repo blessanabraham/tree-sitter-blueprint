@@ -15,7 +15,7 @@
 
 (decorator) @attribute
 
-(property_definition (property_name) @parameter)
+(property_definition (property_name) @property)
 
 (object) @type
 
