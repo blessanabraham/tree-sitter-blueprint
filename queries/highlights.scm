@@ -7,7 +7,7 @@
 
 (constant) @constant.builtin
 
-(boolean) @constant.boolean
+(boolean) @boolean
 
 (using) @include
 
