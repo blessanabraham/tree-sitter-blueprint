@@ -9,8 +9,6 @@
 
 (boolean) @constant.boolean
 
-(array) @array
-
 (using) @include
 
 (template) @keyword
