@@ -157,6 +157,8 @@ module.exports = grammar({
             'none', 'word', 'char', 'word_char',
             'yes', 'no',
             'both',
+            'hidden', 'visible',
+            'wide', 'narrow',
         ),
         _property_value: $ => choice(
             $.constant,
