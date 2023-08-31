@@ -552,6 +552,10 @@
     "named": false
   },
   {
+    "type": "comment",
+    "named": true
+  },
+  {
     "type": "end",
     "named": false
   },
@@ -570,6 +574,10 @@
   {
     "type": "float",
     "named": true
+  },
+  {
+    "type": "hidden",
+    "named": false
   },
   {
     "type": "horizontal",
@@ -593,6 +601,10 @@
   },
   {
     "type": "menu",
+    "named": false
+  },
+  {
+    "type": "narrow",
     "named": false
   },
   {
@@ -665,6 +677,14 @@
   },
   {
     "type": "vertical",
+    "named": false
+  },
+  {
+    "type": "visible",
+    "named": false
+  },
+  {
+    "type": "wide",
     "named": false
   },
   {

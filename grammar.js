@@ -219,5 +219,9 @@ module.exports = grammar({
             )),
             ']',
         ),
-    }
+    },
+    extras: $ => [
+        /\s/,
+        $.comment,
+    ]
 })

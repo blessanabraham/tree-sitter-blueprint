@@ -730,6 +730,22 @@
         {
           "type": "STRING",
           "value": "both"
+        },
+        {
+          "type": "STRING",
+          "value": "hidden"
+        },
+        {
+          "type": "STRING",
+          "value": "visible"
+        },
+        {
+          "type": "STRING",
+          "value": "wide"
+        },
+        {
+          "type": "STRING",
+          "value": "narrow"
         }
       ]
     },
@@ -1035,6 +1051,10 @@
     {
       "type": "PATTERN",
       "value": "\\s"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "comment"
     }
   ],
   "conflicts": [],

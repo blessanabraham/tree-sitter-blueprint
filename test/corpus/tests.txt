@@ -1,0 +1,41 @@
+================================================================================
+Comments
+================================================================================
+
+// Top-level
+/* Top-level */
+Window {
+  // Inner
+  /* Inner */
+  title: "Properties";
+
+  styles [
+    "one",
+    // Array
+    /* Array */
+    "two"
+  ]
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (comment)
+  (comment)
+  (object_definition
+    (object)
+    (block
+      (comment)
+      (comment)
+      (property_definition
+        (property_name)
+        (string
+          (string_fragment)))
+      (styles_list
+        (array
+          (string
+            (string_fragment))
+          (comment)
+          (comment)
+          (string
+            (string_fragment)))))))
