@@ -39,3 +39,35 @@ Window {
           (comment)
           (string
             (string_fragment)))))))
+
+================================================================================
+Template syntax
+================================================================================
+
+template $MyWindow : Window {}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (template_definition
+    (template)
+    (template_name_qualifier
+      (object))
+    (object)
+    (block)))
+
+================================================================================
+Old template syntax
+================================================================================
+
+template .MyWindow : Window {}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (template_definition
+    (template)
+    (template_name_qualifier
+      (object))
+    (object)
+    (block)))

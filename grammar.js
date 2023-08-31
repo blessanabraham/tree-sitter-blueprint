@@ -70,7 +70,7 @@ module.exports = grammar({
         // Gtk | WebKit2 | Adw.StatusPage | Foo.Bar.Baz
         _object_fragment: $ => /[A-Z][A-Za-z0-9_]+/,
         object: $ => seq(
-            optional('.'),
+            optional(/[.$]/),
             $._object_fragment,
             repeat(seq('.', $._object_fragment)),
         ),
