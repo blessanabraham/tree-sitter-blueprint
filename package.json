@@ -27,13 +27,15 @@
   "devDependencies": {
     "tree-sitter-cli": "^0.20.7"
   },
-  "tree-sitter": {
-    "scope": "source.blp",
-    "file-types": [
-      "blueprint", "blp"
-    ],
-    "highlights": [
-      "queries/highlights.scm"
-    ]
-  }
+  "tree-sitter": [
+    {
+      "scope": "source.blp",
+      "file-types": [
+        "blueprint", "blp"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ]
+    }
+  ]
 }
