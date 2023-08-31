@@ -283,6 +283,25 @@
     }
   },
   {
+    "type": "property_binding",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "object_id",
+          "named": true
+        },
+        {
+          "type": "property_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "property_definition",
     "named": true,
     "fields": {},
@@ -319,7 +338,7 @@
           "named": true
         },
         {
-          "type": "object_id",
+          "type": "property_binding",
           "named": true
         },
         {

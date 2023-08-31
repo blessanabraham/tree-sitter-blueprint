@@ -786,7 +786,7 @@
         }
       ]
     },
-    "_property_binding": {
+    "property_binding": {
       "type": "SEQ",
       "members": [
         {
@@ -847,7 +847,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "_property_binding"
+              "name": "property_binding"
             }
           ]
         },

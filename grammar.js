@@ -168,7 +168,7 @@ module.exports = grammar({
             $.string, $.gettext_string,
             $.number, $.float,
         ),
-        _property_binding: $ => seq(
+        property_binding: $ => seq(
             'bind',
             $.object_id,
             '.',
@@ -178,7 +178,7 @@ module.exports = grammar({
         property_definition: $ => seq(
             $.property_name,
             ':',
-            choice($._property_value, $._property_binding),
+            choice($._property_value, $.property_binding),
             ';',
         ),
 
