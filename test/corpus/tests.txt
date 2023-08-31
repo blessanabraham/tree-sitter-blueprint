@@ -71,3 +71,45 @@ template .MyWindow : Window {}
       (object))
     (object)
     (block)))
+
+================================================================================
+Signal binding
+================================================================================
+
+Button {
+  clicked => $on_clicked();
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (object_definition
+    (object)
+    (block
+      (signal_binding
+        (signal_name
+          (property_name))
+        (function
+          (identifier
+            (object_id)))))))
+
+================================================================================
+Old signal binding
+================================================================================
+
+Button {
+  clicked => on_clicked();
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (object_definition
+    (object)
+    (block
+      (signal_binding
+        (signal_name
+          (property_name))
+        (function
+          (identifier
+            (object_id)))))))

@@ -183,6 +183,7 @@ module.exports = grammar({
         ),
 
         function: $ => seq(
+            optional('$'),
             $.identifier, '(', ')',
         ),
 
