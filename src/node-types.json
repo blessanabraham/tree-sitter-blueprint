@@ -283,6 +283,25 @@
     }
   },
   {
+    "type": "property_binding",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "object_id",
+          "named": true
+        },
+        {
+          "type": "property_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "property_definition",
     "named": true,
     "fields": {},
@@ -319,7 +338,7 @@
           "named": true
         },
         {
-          "type": "object_id",
+          "type": "property_binding",
           "named": true
         },
         {
@@ -480,6 +499,10 @@
     "named": false
   },
   {
+    "type": "$",
+    "named": false
+  },
+  {
     "type": "'",
     "named": false
   },
@@ -552,6 +575,10 @@
     "named": false
   },
   {
+    "type": "comment",
+    "named": true
+  },
+  {
     "type": "end",
     "named": false
   },
@@ -570,6 +597,10 @@
   {
     "type": "float",
     "named": true
+  },
+  {
+    "type": "hidden",
+    "named": false
   },
   {
     "type": "horizontal",
@@ -593,6 +624,10 @@
   },
   {
     "type": "menu",
+    "named": false
+  },
+  {
+    "type": "narrow",
     "named": false
   },
   {
@@ -665,6 +700,14 @@
   },
   {
     "type": "vertical",
+    "named": false
+  },
+  {
+    "type": "visible",
+    "named": false
+  },
+  {
+    "type": "wide",
     "named": false
   },
   {

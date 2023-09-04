@@ -70,7 +70,7 @@ module.exports = grammar({
         // Gtk | WebKit2 | Adw.StatusPage | Foo.Bar.Baz
         _object_fragment: $ => /[A-Z][A-Za-z0-9_]+/,
         object: $ => seq(
-            optional('.'),
+            optional(/[.$]/),
             $._object_fragment,
             repeat(seq('.', $._object_fragment)),
         ),
@@ -168,7 +168,7 @@ module.exports = grammar({
             $.string, $.gettext_string,
             $.number, $.float,
         ),
-        _property_binding: $ => seq(
+        property_binding: $ => seq(
             'bind',
             $.object_id,
             '.',
@@ -178,11 +178,12 @@ module.exports = grammar({
         property_definition: $ => seq(
             $.property_name,
             ':',
-            choice($._property_value, $._property_binding),
+            choice($._property_value, $.property_binding),
             ';',
         ),
 
         function: $ => seq(
+            optional('$'),
             $.identifier, '(', ')',
         ),
 
@@ -219,5 +220,9 @@ module.exports = grammar({
             )),
             ']',
         ),
-    }
+    },
+    extras: $ => [
+        /\s/,
+        $.comment,
+    ]
 })
